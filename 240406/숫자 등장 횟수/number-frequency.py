@@ -1,9 +1,8 @@
-import sys
 from collections import defaultdict
 
-n,m=list(map(int,sys.stdin.readline().split(' ')))
-arr=list(sys.stdin.readline().split(' '))
-query=list(sys.stdin.readline().split(' '))
+n,m=list(map(int, input().split()))
+arr=list(map(int, input().split()))
+query=list(map(int, input().split()))
 
 count=defaultdict(int)
 for elem in arr:
