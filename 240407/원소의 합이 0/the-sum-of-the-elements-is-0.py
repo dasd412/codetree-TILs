@@ -20,12 +20,12 @@ for i in range(n):
     for j in range(n):
         cd[C[i]+D[j]]+=1
 
+# len(ab)=O(n^2)
 answer=0
 for k1,v1 in ab.items():
-    for k2,v2 in cd.items():
-        # 합이 0이 되는 경우 가짓수를 곱한다.
-        if k1+k2==0:
-            answer+=(v1*v2)
+    # 합이 0이 되는 경우 가짓수를 곱한다.
+    if -k1 in cd:
+        answer+=(v1*cd[-k1])
 
 """
 원래라면 O(n^4)인데, 이러면 10^12이 되므로 시간 초과다.
