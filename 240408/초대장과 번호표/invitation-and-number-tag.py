@@ -12,8 +12,6 @@ for i in range(g):
 
     arr.append(li[1:])
 
-arr.sort(key=lambda x : len(x))
-
 # O(GN)
 for li in arr:
 
