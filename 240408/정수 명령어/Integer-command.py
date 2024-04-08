@@ -1,12 +1,14 @@
 from sortedcontainers import SortedSet
 
-ss=SortedSet()
+
 
 t=int(input())
 
 for i in range(t):
     k=int(input())
 
+    ss=SortedSet()
+    
     for j in range(k):
         op = list(input().split())
 
