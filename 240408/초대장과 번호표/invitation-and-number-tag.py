@@ -1,35 +1,41 @@
+from collections import deque
+
 n,g = list(map(int, input().split()))
 
-arr=[]
-
-person=set()
+groups=[]
 
 for i in range(g):
     li= list(map(int, input().split()))
-    if li[0]==2 and 1 in li[1:]:
-        person.add(li[1])
-        person.add(li[2])
-
-    arr.append(li[1:])
-
-# O(GN)
-for li in arr:
-
-    temp=set()
+    
+    group=set()
+    
     for i in range(len(li)):
-        temp.add(li[i])
+        if i>0:
+            group.add(li[i])
+    
+    groups.append(group)
+        
+queue=deque()
+queue.append(1)
 
-    # 딱 한 사람만 못 받았을 경우 집합을 합한다.
-    if len(temp-person)==1:
-        person=person|temp
+visited=[False]*(n+1)
 
-for li in arr:
+# O(NG)
+while queue:
+    person=queue.popleft()
+    visited[person]=True
 
-    temp=set()
-    for i in range(len(li)):
-        temp.add(li[i])
+    for group in groups:
+        if person in group:
+            group.remove(person)
 
-    if len(temp-person)==1:
-        person=person|temp
+            # 단 하나만 남게 될 경우
+            if len(group)==1:
+                queue.append(group.pop())
 
-print(len(person))
+answer=0
+for i in range(1,len(visited)):
+    if visited[i]:
+        answer+=1
+
+print(answer)
