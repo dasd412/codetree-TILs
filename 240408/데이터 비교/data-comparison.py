@@ -9,7 +9,7 @@ for elem in arr1:
     arr1_set.add(elem)
 
 for elem in arr2:
-    if elem in arr1:
+    if elem in arr1_set:
         print(1,end=' ')
     else:
         print(0,end=' ')
