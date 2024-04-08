@@ -25,5 +25,13 @@ for li in arr:
     if len(temp-person)==1:
         person=person|temp
 
+for li in arr:
+
+    temp=set()
+    for i in range(len(li)):
+        temp.add(li[i])
+
+    if len(temp-person)==1:
+        person=person|temp
 
 print(len(person))
