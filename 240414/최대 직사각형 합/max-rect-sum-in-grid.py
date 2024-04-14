@@ -24,13 +24,13 @@ for i in range(1,n+1):
     for j in range(1,n+1):
         for k in range(1,max(i,j)+1):
             # 정사각형
-            cand1=dp[i][j]-dp[i][j-k]-dp[i-k][j]+dp[i-k][j-k] if i-k>=0 and j-k>=0 else 0
-            
+            cand1=dp[i][j]-dp[i][j-k]-dp[i-k][j]+dp[i-k][j-k] if i-k>=0 and j-k>=0 else -sys.maxsize
+
             # 세로
-            cand2=dp[i][j]-dp[i-k][j]-dp[i][j-1]+dp[i-k][j-1] if i-k>=0 and j-1>=0 else 0
+            cand2=dp[i][j]-dp[i-k][j]-dp[i][j-1]+dp[i-k][j-1] if i-k>=0 and j-1>=0 else -sys.maxsize
 
             # 가로
-            cand3=dp[i][j]-dp[i][j-k]-dp[i-1][j]+dp[i-1][j-k] if j-k>=0 and i-1>=0 else 0
+            cand3=dp[i][j]-dp[i][j-k]-dp[i-1][j]+dp[i-1][j-k] if j-k>=0 and i-1>=0 else -sys.maxsize
 
             answer=max(answer,cand1,cand2,cand3)
             
