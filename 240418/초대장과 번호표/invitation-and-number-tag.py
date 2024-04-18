@@ -21,7 +21,7 @@ while queue:
     for elem in arr:
         if number in elem:
             elem.remove(number)
-        if len(elem)==1:
-            queue.append(list(elem)[0])
+            if len(elem)==1:
+                queue.append(elem.pop())
 
 print(len(answer))
