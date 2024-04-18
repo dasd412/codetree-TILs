@@ -29,6 +29,10 @@ for c in range(len(dp)):
     if 1<=c-k and c+k<len(dp):
         val=dp[c+k]-dp[c-k-1]
         answer=max(answer,val)
+    elif k>=len(dp):
+        # k가 바구니의 위치보다 클 수가 있다...
+        val=dp[-1]-dp[0]
+        answer=max(answer,val)
 
-# O(3n)
+# O(3n) 풀이 (누적합 이용)
 print(answer)
