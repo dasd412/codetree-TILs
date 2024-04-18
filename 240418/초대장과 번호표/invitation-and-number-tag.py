@@ -12,11 +12,11 @@ for i in range(g):
 queue=deque()
 queue.append(1)
 
-answer=0
+answer=set()
 
 while queue:
     number=queue.popleft()
-    answer+=1
+    answer.add(number)
 
     for elem in arr:
         if number in elem:
@@ -24,4 +24,4 @@ while queue:
         if len(elem)==1:
             queue.append(list(elem)[0])
 
-print(answer)
+print(len(answer))
