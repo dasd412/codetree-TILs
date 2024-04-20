@@ -22,4 +22,7 @@ for left in range(n):
     if right<n:
         answer=min(answer,arr[right]-arr[left])
 
-print(answer)
+if answer==sys.maxsize:
+    print(-1)
+else:
+    print(answer)
