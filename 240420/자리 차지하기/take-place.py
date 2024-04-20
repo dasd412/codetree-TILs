@@ -14,5 +14,7 @@ for elem in arr:
     if index<len(ss) and ss[index]<=elem:
         ss.remove(ss[index])
         answer+=1
+    else:
+        break
 
 print(answer)
