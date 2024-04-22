@@ -17,6 +17,7 @@ for i in range(n):
 # O(K) * O(log min(M,N))
 for i in range(k):
     sums,x,y,b_idx=heapq.heappop(heap)
-    heapq.heappush(heap,(x+b[b_idx+1],x,b[b_idx+1],b_idx+1))
+    if b_idx+1<len(b):
+        heapq.heappush(heap,(x+b[b_idx+1],x,b[b_idx+1],b_idx+1))
     if i==k-1:
         print(sums)
