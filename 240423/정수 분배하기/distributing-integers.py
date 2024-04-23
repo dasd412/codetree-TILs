@@ -7,7 +7,7 @@ for i in range(n):
     arr.append(num)
 
 start=1
-end=min(arr)
+end=max(arr)
 
 answer=0
 
