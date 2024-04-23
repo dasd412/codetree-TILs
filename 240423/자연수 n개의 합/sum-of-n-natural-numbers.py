@@ -1,7 +1,9 @@
+import math
+
 s=int(input())
 
 start=1
-end=10^18
+end=int(math.pow(10,18))
 
 answer=0
 
