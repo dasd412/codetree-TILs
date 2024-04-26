@@ -25,7 +25,7 @@ def make_prefix_sum(ch,d:list[list[int]])->list[list[int]]:
         d[1][j]=count
 
     for i in range(2,n+1):
-        for j in range(2,n+1):
+        for j in range(2,m+1):
             d[i][j]=d[i][j-1]+d[i-1][j]-d[i-1][j-1]
             if arr[i-1][j-1]==ch:
                 d[i][j]+=1
