@@ -25,7 +25,7 @@ for i in range(1,n+1):
 
 for left in range(1,n+1):
     right=left+k-1
-    if right>=n:
+    if right>n:
         break
     answer=min(answer,prefix_sum[right]-prefix_sum[left-1])
 
