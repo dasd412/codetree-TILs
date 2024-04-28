@@ -37,7 +37,7 @@ def remove_event(pos1,speed1,pos2,speed2):
     event.remove((1.0*(pos2-pos1)/(speed1-speed2),pos1,speed1))
 
 # 초기화. 바로 앞사람과 마주칠 수 있는지 먼저 추적.
-for i in range(len(people)-1):
+for i in range(n-1):
     add_event(positions[i],speeds[i],positions[i+1],speeds[i+1])
 
 # 앞지른 사건이 남아있을 때까지 지속한다.
